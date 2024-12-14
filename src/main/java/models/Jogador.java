@@ -1,53 +1,48 @@
-package models;
 
-import jakarta.persistence.*;
+package com.exemplo.jogodamilhao.model;
 
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
 @Entity
 public class Jogador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    private String nickname;
+    private Integer pontuacao;
+    private LocalDateTime dataPartida;
 
-    private String nickName;
-
-    private int pontuacao;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataPartida;
-
-    public Jogador() {
-    }
-
-    public long getId() {
+    // Getters e Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public int getPontuacao() {
+    public Integer getPontuacao() {
         return pontuacao;
     }
 
-    public void setPontuacao(int pontuacao) {
+    public void setPontuacao(Integer pontuacao) {
         this.pontuacao = pontuacao;
     }
 
-    public Date getDataPartida() {
+    public LocalDateTime getDataPartida() {
         return dataPartida;
     }
 
-    public void setDataPartida(Date dataPartida) {
+    public void setDataPartida(LocalDateTime dataPartida) {
         this.dataPartida = dataPartida;
     }
 }
